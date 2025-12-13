@@ -1,0 +1,6 @@
+CREATE TABLE history (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    expression VARCHAR(255),
+    result VARCHAR(50),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
