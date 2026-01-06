@@ -13,7 +13,7 @@ if ($expression == '') {
   Keamanan:
   - hanya angka dan operator matematika
 */
-if (!preg_match('/^[0-9+\-*/(). ]+$/', $expression)) {
+if (!preg_match('/^[0-9+\-*\/\(\). ]+$/', $expression)) {
     echo "Error";
     exit;
 }
