@@ -51,11 +51,18 @@ function calculate() {
     //2. Cek validasi sederhana: Kalau kosong, jangan kirim apa-apa
     if(expression === '') return;
 
-    //3. Siapkan data untuk dikirim (membungkus data layaknya formulir)
+    //3. Cek apakah karakter terakhir adalah operator? (Misal: "5+" atau "10/")
+    const lastChar = expression.slice(-1);
+    if (['+', '-', '*', '/'].includes(lastChar)) {
+        alert('Lengkapi dulu hitungannya!');
+        return; // Berhenti, jangan kirim ke PHP
+    }
+
+    //4. Siapkan data untuk dikirim (membungkus data layaknya formulir)
     let formData = new FormData();
     formData.append('expression', expression); //'expression' adalah nama kunci yang akan dibaca $_POST di PHP
 
-    //4. Proses AJAX (Fetch API)
+    //5. Proses AJAX (Fetch API)
     //mengirim data ke 'calculate.php' tanpa mereload halaman browser
     fetch('calculate.php', {
         method: 'POST',     //metode pengiriman data

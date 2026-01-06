@@ -1,136 +1,223 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5;
+    font-family: 'Press Start 2P', cursive;
+    
+    /* 1. Warna Dasar (Moving Gradient) */
+    background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #8a2387, #e94057, #f27121);
+    
+    /* perbesar ukuran background agar bisa digerakkan */
+    background-size: 400% 400%;
+    
+    animation: gradientMove 10s ease infinite;
+
+    /* 2. Efek Pixel (Grid Overlay) */
+    /* timpa warna di atas dengan garis-garis hitam */
+    position: relative;
+    z-index: 1;
+}
+
+/* pseudo-element untuk membuat motif kotak-kotak (GRID) di atas warna */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Taruh di belakang konten tapi di depan background warna */
+    
+    /* pola Kotak-kotak pixel ukuran 4px */
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.2) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.2) 2px, transparent 2px);
+    background-size: 4px 4px; /* Ukuran 1 'pixel' */
+}
+
+/* tata letak supaya konten di tengah */
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    padding: 20px;
+}
+
+/* logic animasinya */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%; /* geser warna ke kanan */
+    }
+    100% {
+        background-position: 0% 50%; /* balik lagi ke kiri */
+    }
 }
 
 .container {
     display: flex;
-    gap: 30px;
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    gap: 20px;
+    background: #e0e0d1;
+    padding: 20px;
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0px #000;
+    max-width: 900px;
+    align-items: flex-start;
 }
 
-/* Kalkulator Style */
+/* Calculator */
 .calculator {
-    width: 320px;
+    width: 340px;
+    background: #c3c3c3;
+    padding: 15px;
+    border: 4px solid #000;
 }
 
 .display {
-    background-color: #222;
-    color: white;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: right;
+    background-color: #9bbc0f;
+    color: #0f380f; 
+    padding: 15px;
+    border: 4px solid #000;
     margin-bottom: 20px;
-    height: 80px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: inset 4px 4px 0px rgba(0,0,0,0.2);
 }
 
 #inputDisplay {
     width: 100%;
     background: transparent;
     border: none;
-    color: white;
-    font-size: 2.2em;
+    color: #0f380f;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5rem;
     text-align: right;
     outline: none;
+    margin-top: 10px;
 }
 
 .sub-display {
-    font-size: 1em;
-    color: #888;
+    font-size: 0.7rem;
+    color: #306230;
     height: 20px;
+    text-align: right;
 }
 
+/* Button */
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+    gap: 10px;
 }
 
 button {
-    padding: 20px;
-    font-size: 1.2em;
-    border: none;
-    border-radius: 12px;
+    padding: 15px 5px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem; 
+    border: 4px solid #000;
+    background-color: #fff;
     cursor: pointer;
-    background-color: #f0f0f0;
-    transition: all 0.2s;
-    font-weight: 600;
+    box-shadow: 4px 4px 0px #000; 
+    transition: all 0.1s;
+    text-transform: uppercase;
 }
 
-button:hover { background-color: #dcdcdc; transform: translateY(-2px); }
-button:active { transform: translateY(0); }
+/* efek tombol ditekan */
+button:active {
+    transform: translate(4px, 4px); 
+    box-shadow: 0px 0px 0px #000; 
+}
 
-.btn-op { background-color: #ff9f43; color: white; }
-.btn-op:hover { background-color: #e67e22; }
-
+/* warna tombol */
+.btn-op { background-color: #ff9800; color: #000; } 
 .btn-equal {
     grid-row: span 2;
-    background-color: #2ecc71;
-    color: white;
+    background-color: #4caf50; 
+    height: 100%;
 }
-.btn-equal:hover { background-color: #27ae60; }
-
-.btn-clear { background-color: #e74c3c; color: white; }
-.btn-del { background-color: #95a5a6; color: white; }
+.btn-clear { background-color: #f44336; color: white; } 
+.btn-del { background-color: #ffeb3b; color: black; } 
 .btn-zero { grid-column: span 2; }
 
-/* History Style */
-.history-panel {
-    width: 280px;
-    border-left: 2px solid #f0f0f0;
-    padding-left: 25px;
-    display: flex;
-    flex-direction: column;
+button:hover {
+    background-color: #eee; 
 }
 
-.history-panel h3 { margin-top: 0; color: #333; font-size: 1.2em; border-bottom: 2px solid #2ecc71; padding-bottom: 10px; display: inline-block;}
+/* History */
+.history-panel {
+    width: 300px;
+    background: #fff;
+    border: 4px solid #000;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    height: 520px;
+}
+
+.history-panel h3 {
+    margin-top: 0;
+    font-size: 0.8rem;
+    text-align: center;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 15px;
+}
 
 .history-list-wrapper {
     flex-grow: 1;
     overflow-y: auto;
-    max-height: 450px;
-    padding-right: 5px;
+    border: 2px solid #000;
+    padding: 5px;
+    background: #eee;
 }
 
-#historyList { list-style: none; padding: 0; margin: 0; }
+/* scrollbar kustom */
+.history-list-wrapper::-webkit-scrollbar { width: 10px; }
+.history-list-wrapper::-webkit-scrollbar-track { background: #ccc; border-left: 2px solid #000; }
+.history-list-wrapper::-webkit-scrollbar-thumb { background: #000; }
+
+#historyList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
 #historyList li {
-    background: #f8f9fa;
-    border-radius: 8px;
-    padding: 12px;
-    margin-bottom: 8px;
+    background: #fff;
+    border-bottom: 2px solid #000;
+    padding: 8px;
+    margin-bottom: 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    font-size: 0.95em;
-    border: 1px solid #eee;
+    font-size: 0.6rem;
+    line-height: 1.5;
 }
 
-#historyList li span { color: #666; font-family: monospace; }
-#historyList li strong { color: #333; }
+#historyList li strong { color: #d32f2f; }
 
 .btn-reset {
     display: block;
     width: 100%;
     text-align: center;
-    background: #e74c3c;
-    color: white;
+    background: #000;
+    color: #fff;
     text-decoration: none;
-    padding: 12px 0;
-    border-radius: 8px;
-    margin-top: 20px;
-    font-weight: bold;
-    transition: 0.2s;
+    padding: 15px 0;
+    margin-top: 15px;
+    font-size: 0.7rem;
+    border: 4px solid transparent;
+    box-shadow: 4px 4px 0px #888;
 }
-.btn-reset:hover { background: #c0392b; opacity: 0.9; }
+
+.btn-reset:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
