@@ -39,8 +39,8 @@ $hasil = round($hasil, 2);
 // Expression kita format teks misal: "100 C ke F"
 $expression = "$suhu °$from ke °$to";
 
-try {
-    $query = "INSERT INTO history (expression, result) VALUES (:expression, :result)";
+try {    
+    $query = "INSERT INTO history (expression, result, category) VALUES (:expression, :result, 'suhu')";
     $stmt = $db->prepare($query);
     $stmt->bindParam(':expression', $expression);
     $stmt->bindParam(':result', $hasil);

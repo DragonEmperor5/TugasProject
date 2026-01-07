@@ -1,7 +1,7 @@
 <?php
 include_once 'controllers/HistoryController.php';
 $historyController = new HistoryController();
-$stmt = $historyController->read();
+$stmt = $historyController->readByCategory('biasa');
 ?>
 
 <!DOCTYPE html>

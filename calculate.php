@@ -24,7 +24,7 @@ try {
     eval('$result = ' . $expression . ';');
 
     // Simpan ke database (PDO)
-    $query = "INSERT INTO history (expression, result) VALUES (:expression, :result)";
+    $query = "INSERT INTO history (expression, result, category) VALUES (:expression, :result, 'biasa')";
     $stmt = $db->prepare($query);
     $stmt->bindParam(':expression', $expression);
     $stmt->bindParam(':result', $result);

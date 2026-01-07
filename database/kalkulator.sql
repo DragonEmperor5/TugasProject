@@ -4,3 +4,5 @@ CREATE TABLE history (
     result VARCHAR(50),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+ALTER TABLE history ADD COLUMN category VARCHAR(20) DEFAULT 'biasa';

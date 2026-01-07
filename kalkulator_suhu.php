@@ -2,7 +2,7 @@
 include_once 'controllers/HistoryController.php';
 $historyController = new HistoryController();
 // Kita gunakan controller yang sama untuk mengambil history (opsional)
-$stmt = $historyController->read();
+$stmt = $historyController->readByCategory('suhu');
 ?>
 
 <!DOCTYPE html>

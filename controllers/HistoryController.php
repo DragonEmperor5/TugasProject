@@ -10,23 +10,21 @@ class HistoryController {
         $this->conn = $database->getConnection();
     }
 
-    //fungsi untk mengambil semua riwayat
-    public function read() {
-        $query = "SELECT * FROM " . $this->table_name . " ORDER BY id DESC";
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute();
-        return $stmt;
-    }
-    
-    //fungsi hapus
-    public function clear() {
-        $query = "TRUNCATE TABLE " . $this->table_name;
-        $stmt = $this->conn->prepare($query);
-        
-        if($stmt->execute()){
-            return true;
-        }
-        return false;
-    }
+    // Di dalam file HistoryController.php
+
+public function readByCategory($category) {
+    $query = "SELECT * FROM " . $this->table_name . " WHERE category = :category ORDER BY id DESC";
+    $stmt = $this->conn->prepare($query);
+    $stmt->bindParam(':category', $category);
+    $stmt->execute();
+    return $stmt;
+}
+
+public function clearByCategory($category) {
+    $query = "DELETE FROM " . $this->table_name . " WHERE category = :category";
+    $stmt = $this->conn->prepare($query);
+    $stmt->bindParam(':category', $category);
+    return $stmt->execute();
+}
 }
 ?>
