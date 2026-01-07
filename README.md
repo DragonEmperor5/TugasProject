@@ -97,3 +97,10 @@ php -s Localhost:8000
 Pastikan Apache & MySQL sudah berjalan
 Session digunakan untuk mengamankan akses riwayat
 Struktur controller masih sederhana (tanpa framework)
+👤 Author
+Nama : I Gede Wiryaartha Adi Karsa(240030239)
+Username  : DragonEmperor5
+Peraan  : Membuat Database Menamba Structur Folder Halaman Daashboard dan membuat Calculator Suhu
+Nama : I Putu Angga Widhyadana Putra(240030309)
+Username  : KillyNourin
+Peraan  : Membuaaat CSS LogikaController  Membuat Simple Calculator 
