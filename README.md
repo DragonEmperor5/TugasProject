@@ -1,0 +1,99 @@
+#  Kalkulator Online (PHP & MySQL)
+
+Kalkulator Online adalah aplikasi web sederhana berbasis **PHP**, **MySQL**, dan **JavaScript** yang menyediakan berbagai fitur perhitungan serta penyimpanan riwayat hasil kalkulasi ke dalam database.
+
+Project ini cocok untuk:
+- Tugas kuliah
+- Latihan CRUD PHP & MySQL
+- Contoh penerapan MVC sederhana
+
+---
+
+##  Fitur Utama
+
+-  Kalkulator Biasa (tambah, kurang, kali, bagi)
+-  Kalkulator Suhu (Celcius, Fahrenheit, Kelvin)
+-  Riwayat Perhitungan
+-  Hapus Riwayat Perhitungan
+-  Session-based Access
+-  Struktur folder terorganisir (MVC sederhana)
+
+---
+
+## 🗂️ Struktur Folder
+
+kalkulator-online/
+│
+├── assets/
+│ └── js/
+│ └── script.js
+│
+├── config/
+│ └── Database.php
+│
+├── controllers/
+│ └── HistoryController.php
+│
+├── database/
+│ └── kalkulator.sql
+│
+├── calculate.php
+├── delete_history.php
+├── history.php
+├── index.php
+├── kalkulator_biasa.php
+├── kalkulator_suhu.php
+└── README.md
+
+---
+
+##  Teknologi yang Digunakan
+
+- PHP Native
+- MySQL
+- JavaScript
+- HTML & CSS
+- Apache (XAMPP / Laragon)
+
+---
+
+##  Instalasi & Konfigurasi
+
+### 1 Clone Repository
+```bash
+git clone https://github.com/DragonEmperor5/TugasProject.git
+
+
+2 Pindahkan ke Folder Server
+
+XAMPP: htdocs/
+
+Laragon: www/
+
+3 Import Database
+
+Buka phpMyAdmin
+
+Buat database, contoh: kalkulator
+
+Import file:
+database/kalkulator.sql
+
+4 Konfigurasi Database
+
+Edit file: config/Database.php
+
+Sesuaikan:
+private $host = "localhost";
+private $db_name = "kalkulator";
+private $username = "root";
+private $password = "";
+
+▶ Cara Menjalankan
+Buka browser dan akses:
+http://localhost/kalkulator-online/
+
+📌 Catatan Penting
+Pastikan Apache & MySQL sudah berjalan
+Session digunakan untuk mengamankan akses riwayat
+Struktur controller masih sederhana (tanpa framework)
