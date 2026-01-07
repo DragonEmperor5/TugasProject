@@ -91,7 +91,7 @@ private $password = "";
 
 ▶ Cara Menjalankan
 Buka browser dan akses:
-http://localhost/kalkulator-online/
+php -s Localhost:8000
 
 📌 Catatan Penting
 Pastikan Apache & MySQL sudah berjalan
