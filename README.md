@@ -20,30 +20,31 @@ Project ini cocok untuk:
 
 ---
 
-## 🗂️ Struktur Folder
+## Struktur Folder
 
-kalkulator-online/
-│
-├── assets/
-│ └── js/
-│ └── script.js
-│
-├── config/
-│ └── Database.php
-│
-├── controllers/
-│ └── HistoryController.php
-│
-├── database/
-│ └── kalkulator.sql
-│
-├── calculate.php
-├── delete_history.php
-├── history.php
-├── index.php
-├── kalkulator_biasa.php
-├── kalkulator_suhu.php
-└── README.md
+Berikut adalah susunan direktori dan file dalam project Kalkulator Online ini beserta penjelasan fungsinya:
+
+```text
+📂 project-kalkulator/
+├── 📂 assets/
+│   ├── 📂 css/
+│   │   └── 📄 style.css
+│   └── 📂 js/
+│       └── 📄 script.js
+├── 📂 config/
+│   └── 📄 Database.php
+├── 📂 controllers/
+│   └── 📄 HistoryController.php
+├── 📂 database/
+│   └── 📄 kalkulator.sql
+├── 📄 calculate.php
+├── 📄 calculate_suhu.php
+├── 📄 delete_history.php
+├── 📄 history.php
+├── 📄 index.php
+├── 📄 kalkulator_biasa.php
+├── 📄 kalkulator_suhu.php
+└── 📄 README.md
 
 ---
 
