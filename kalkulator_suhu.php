@@ -69,7 +69,7 @@ $stmt = $historyController->readByCategory('suhu');
                 ?>
             </ul>
         </div>
-        <a href="delete_history.php?action=clear" class="btn-reset" onclick="return confirm('Yakin ingin menghapus semua riwayat?')">Hapus Riwayat</a>
+        <a href="delete_history.php?action=clear&cat=suhu" class="btn-reset" onclick="return confirm('Yakin ingin menghapus semua riwayat?')">Hapus Riwayat</a>
     </div>
 </div>
 
