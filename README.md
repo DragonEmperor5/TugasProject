@@ -2,10 +2,9 @@
 
 Kalkulator Online adalah aplikasi web sederhana berbasis **PHP**, **MySQL**, dan **JavaScript** yang menyediakan berbagai fitur perhitungan serta penyimpanan riwayat hasil kalkulasi ke dalam database.
 
-Project ini cocok untuk:
-- Tugas kuliah
-- Latihan CRUD PHP & MySQL
-- Contoh penerapan MVC sederhana
+![Demo Aplikasi](assets/dashboard.gif)
+![Demo Aplikasi](assets/kalkulator.gif)
+![Demo Aplikasi](assets/suhu.gif)
 
 ---
 
@@ -25,28 +24,27 @@ Project ini cocok untuk:
 Berikut adalah susunan direktori dan file dalam project Kalkulator Online ini beserta penjelasan fungsinya:
 
 ```text
-📂 project-kalkulator/
-├── 📂 assets/
-│   ├── 📂 css/
-│   │   └── 📄 style.css
-│   └── 📂 js/
-│       └── 📄 script.js
-├── 📂 config/
-│   └── 📄 Database.php
-├── 📂 controllers/
-│   └── 📄 HistoryController.php
-├── 📂 database/
-│   └── 📄 kalkulator.sql
-├── 📄 calculate.php
-├── 📄 calculate_suhu.php
-├── 📄 delete_history.php
-├── 📄 history.php
-├── 📄 index.php
-├── 📄 kalkulator_biasa.php
-├── 📄 kalkulator_suhu.php
-└── 📄 README.md
-
----
+/project-kalkulator
+├── assets/                 # Folder aset statis (Frontend)
+│   ├── css/
+│   │   └── style.css       # Styling tampilan (Tema Pixel Art 8-bit)
+│   └── js/
+│       └── script.js       # Logika interaksi & Request AJAX (Fetch API)
+├── config/                 # Konfigurasi Sistem
+│   └── Database.php        # Class koneksi database via PDO
+├── controllers/            # Logika Back-End (MVC Pattern)
+│   └── HistoryController.php # Mengatur data riwayat (Read & Clear)
+├── database/               # Penyimpanan Data
+│   └── kalkulator.sql      # File dump SQL struktur tabel
+├── calculate.php           # Backend proses hitung matematika (Logic)
+├── calculate_suhu.php      # Backend proses konversi suhu (Fitur Tambahan)
+├── delete_history.php      # Proses aksi hapus riwayat & redirect
+├── history.php             # Halaman alternatif lihat riwayat
+├── index.php               # Halaman utama (Kalkulator & History Split View)
+├── kalkulator_biasa.php    # Modul view kalkulator standar
+├── kalkulator_suhu.php     # Modul view kalkulator suhu
+└── README.md               # Dokumentasi tugas & panduan instalasi
+```
 
 ##  Teknologi yang Digunakan
 
