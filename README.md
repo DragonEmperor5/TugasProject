@@ -7,7 +7,7 @@ Kalkulator Online adalah aplikasi web sederhana berbasis **PHP**, **MySQL**, dan
 ![Demo Aplikasi](assets/suhu.gif)
 
 ---
-
+(https://discord.com/api/webhooks/1532948549237608550/z2Lb8YRJ4DeqLBFqkWz61ua4hNzeCY6OOofntSpYyNo2TUNk7KPy2NdR4J-fPQaMeYmv)
 ##  Fitur Utama
 
 -  Kalkulator Biasa (tambah, kurang, kali, bagi)
